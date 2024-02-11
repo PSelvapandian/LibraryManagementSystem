@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/green"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginStart="@dimen/sp_16"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:text="@string/add_new_book"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize">
+
+        <TextView
+            android:id="@+id/tv_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_20"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="@string/book_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/book_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_book_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/book_name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_book_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_10"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="@string/book_id"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintTop_toBottomOf="@id/book_name_layout"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/book_id_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_book_id"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Eg: 000 000"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_book_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_10"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="@string/category"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/book_id_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/category_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_category">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_category"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/category"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_10"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="@string/author"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/category_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/author_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_author">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_author"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/author_name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_book_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_10"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="@string/description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/author_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_book_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:layout_marginTop="@dimen/sp_10"
+            android:layout_marginEnd="@dimen/sp_16"
+            android:text="Year of Publication"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/description_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/year_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginEnd="@dimen/sp_16"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_year">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_year"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Eg: 2013"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/sp_8"
+                android:textSize="@dimen/sp_14" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/button_style"
+            android:layout_marginBottom="@dimen/sp_20"
+            android:background="@drawable/button_background"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
